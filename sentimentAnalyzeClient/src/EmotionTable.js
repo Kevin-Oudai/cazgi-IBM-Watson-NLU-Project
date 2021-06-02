@@ -1,6 +1,17 @@
 import React from 'react';
 import './bootstrap.min.css';
 
+function TableRows(props) {
+    const emotionsArray = Object.entries(props.emotions);
+    const emotions = emotionsArray.map((emotion) =>
+        <tr>
+            <td>emotion[0]</td>
+            <td>emotion[1]</td>
+        </tr>
+    );
+    return ({emotions});
+}
+
 class EmotionTable extends React.Component {
     render() {
       return (  
@@ -10,7 +21,7 @@ class EmotionTable extends React.Component {
           <table className="table table-bordered">
             <tbody>
             {
-                //Write code to use the .map method that you worked on in the Hands-on React lab to extract the emotions
+               <TableRows prop={this.props} />
             }
             </tbody>
           </table>
